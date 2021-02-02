@@ -14,18 +14,19 @@ header__list.onclick = function () {
     back.classList.toggle('lock');
 }
 
-$(document).ready(function(){
-    $('.slider').slick(
-        {
-     arrows: true,
-     dots: true,
-     slidesToShow: 3,
-     slidesToScroll: 1,
-     speed:1000,
-     easing: 'easy',
-     centerMode: true,
-     asNavFor: '.sliderbig'
-   }
-   )
-})
-
+if ($('.slider_body').length > 0){
+    $('.slider_body').slick({
+        dots: true,
+        arrows: false,
+        accessibility: false,
+        slidesToShow:1,
+        autoplaySpeed:3000,
+        adaptiveHeight: true,
+        nextArrow: '<button type="button" class = "slick-next" ></button>',
+        prevArrow: '<button type="button" class = "slick-prev" ></button>',
+        responsive:[{
+            breakpoint:768,
+            settings:{}
+        }]
+    })
+}
